@@ -1,0 +1,20 @@
+{% extends 'StockAnalyzer/index.html' %}
+{% load crispy_forms_tags %}
+
+<body>
+{% block content %}
+    <div class="jumbotron">
+        <form action="" method="post">
+
+            {% csrf_token %}
+            {% for field in form %}
+                {{field|as_crispy_field}}
+            {% endfor %}
+
+            <br>
+            <button class="button btn btn-info" type="submit"> Sign up </button>
+      </form>
+    </div>
+
+{% endblock %}
+</body>

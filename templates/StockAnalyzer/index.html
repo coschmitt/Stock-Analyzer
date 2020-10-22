@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="FairBnb/css/main.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+    <title>FairBnB</title>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">FairBnB</a>
+        <a class="button btn-sm btn-info" href="{% url 'sign-in' %}" >Sign In</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Browse
+                    </a>
+
+                </li>
+                <a class="button btn-sm btn-info" href="{% url 'sign-up' %}" >Sign Up</a>
+
+
+
+                </li>
+            </ul>
+    {#        <form class="form-inline my-2 my-lg-0" action="/appone/search" method="post">#}
+    {#            {% csrf_token %}#}
+    {#            {{ form.search_box }}#}
+    {##}
+    {#            <script>#}
+    {#            function change()#}
+    {#            {#}
+    {#                 var elem = document.getElementById("search");#}
+    {#                 if (elem.placeholder =="Search Homes") elem.placeholder = "Button label Changed";#}
+    {#                 else elem.placeholder = "CHANGE";#}
+    {#             }#}
+    {##}
+    {##}
+    {#            </script>#}
+    {#            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>#}
+    {#        </form>#}
+
+        </div>
+
+    </nav>
+</head>
+<body>
+{% block content %}
+
+    <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070__340.jpg" width="356"
+         height="400">
+    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80" width="356"
+         height="400">
+    <img src="https://casacostaricarealestate.com/wp-content/uploads/2017/08/colorful-tropical-open-home-rough-cut-thatched-roof-1-main-view-evening.jpg"
+         width="356"
+         height="400">
+    <img src="https://si.wsj.net/public/resources/images/B3-DM067_RIGHTS_IM_20190319162958.jpg" width="356"
+         height="400">
+    <div style="position: relative;background-color: white; width: 600px; height: 800px;">
+
+    <div style="position: absolute; bottom: 10px; background-color: white"></div>
+
+{% endblock %}
+</div>
+
+
+
+</body>
+</html>
