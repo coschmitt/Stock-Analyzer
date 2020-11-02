@@ -1,8 +1,9 @@
-
 import requests
 import json
 import pprint
-
+import yfinance as yf
+import pandas_datareader as pdr
+import pandas as pd
 
 from django.http import HttpResponseRedirect
 from django.db.models import ObjectDoesNotExist
@@ -17,6 +18,7 @@ from django.contrib.auth.models import User
 from StockAnalyzer.forms import SearchForm
 
 # API Key: bu8fm1v48v6qo2tha7gg
+yf.pdr_override()
 
 # Create your views here.
 def index(request):
@@ -49,9 +51,17 @@ def search(request):
     if request.method == 'POST':
         ticker = request.POST.get('search_box')
         # r = requests.get('https://finnhub.io/api/v1/stock/metric?symbol='+ ticker +'&token=bu8fm1v48v6qo2tha7gg')
-        r = requests.get('https://finnhub.io/api/v1/stock/profile2?symbol=' + ticker + '&token=bu8fm1v48v6qo2tha7gg')
-        r_json = r.json()
-        pprint.pprint(r_json)
+        # r = requests.get('https://finnhub.io/api/v1/stock/profile2?symbol=' + ticker + '&token=bu8fm1v48v6qo2tha7gg')
+        # r_json = r.json()
+        data = pdr.get_data_yahoo(
+            str(ticker),
+            start = pd.to_datetime('2017-01-01'),
+            end = '2019-01-29'
+        )
+        print(data)
+
+
+        # pprint.pprint(r_json)
 
 
     return HttpResponseRedirect("/stock-analyzer/auth_home")
